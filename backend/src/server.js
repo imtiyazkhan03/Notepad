@@ -5,7 +5,7 @@ import path from "path";
 
 import { router as notesRoutes } from "./routes/notesRoutes.js";
 import { connectDB } from "./config/db.js";
-import { rateLimiter } from "./middleware/rateLimiter.js";
+// import { rateLimiter } from "./middleware/rateLimiter.js";
 
 dotenv.config();
 
@@ -22,7 +22,7 @@ if (process.env.NODE_ENV !== "production") {
   );
 }
 app.use(express.json());
-app.use(rateLimiter);
+// app.use(rateLimiter);
 
 app.use("/api/notes", notesRoutes);
 
